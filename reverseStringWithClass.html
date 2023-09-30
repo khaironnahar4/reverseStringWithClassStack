@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String With Class</title>
+    <script>
+        class Stack{
+            array=[];
+            arraySize;
+            constructor(str){
+                this.arraySize=this.array.length;
+                str=str.split("");
+                str.reverse(str);
+                console.warn(str.join(""));
+            }
+            push(item){
+                this.array[this.arraySize]=item;
+                this.arraySize++;
+            }
+            pop(){
+                lastElement=this.array[this.arraySize-1];
+                this.arraySize--;
+                this.array.length=this.arraySize;
+                return lastElement;
+            }
+            reverse(value){
+                for(i=0; i<value.length; i++){
+                    push(value[i]);
+                }
+                for(i=0;i<value.length;i++){
+                    value[i]=pop();
+                }
+            }
+        }
+        stc = new Stack("hello world");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
